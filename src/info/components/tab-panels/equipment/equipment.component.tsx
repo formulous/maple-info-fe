@@ -64,6 +64,11 @@ export function Equipment(props: { characterName: string }) {
 						itemName: item.itemName,
 						itemEquipmentPart: item.itemEquipmentPart,
 						itemIcon: item.itemIcon,
+						itemTotalOption: item.itemTotalOption,
+						itemBaseOption: item.itemBaseOption,
+						itemAddOption: item.itemAddOption,
+						itemStarforceOption: item.itemStarforceOption,
+						itemEtcOption: item.itemEtcOption,
 						itemShapeIcon: item.itemShapeIcon,
 						potentialOptionGrade: item.potentialOptionGrade,
 						starforce: item.starforce,
@@ -94,34 +99,6 @@ export function Equipment(props: { characterName: string }) {
 		},
 	});
 
-	// ## OPEN API 다 썼을때 목 데이터 활용
-	// const equipmentList = MOCK_EQUIPMENT.map((item: itemType): iEquipmentInfo => {
-	// 	return {
-	// 		itemName: item.item_name,
-	// 		itemEquipmentPart: item.item_equipment_part,
-	// 		itemIcon: item.item_icon,
-	// 		itemShapeIcon: item.item_shape_icon,
-	// 		potentialOptionGrade: item.potential_option_grade,
-	// 		starforce: item.starforce,
-	// 		additionalPotentialOptionGrade: item.additional_potential_option_grade,
-	// 		potentialOption1:
-	// 			item.potential_option_1 && Utils.filterOptions(item.potential_option_1),
-	// 		potentialOption2:
-	// 			item.potential_option_2 && Utils.filterOptions(item.potential_option_2),
-	// 		potentialOption3:
-	// 			item.potential_option_3 && Utils.filterOptions(item.potential_option_3),
-	// 		additionalPotentialOption1:
-	// 			item.additional_potential_option_1 &&
-	// 			Utils.filterOptions(item.additional_potential_option_1),
-	// 		additionalPotentialOption2:
-	// 			item.additional_potential_option_2 &&
-	// 			Utils.filterOptions(item.additional_potential_option_2),
-	// 		additionalPotentialOption3:
-	// 			item.additional_potential_option_3 &&
-	// 			Utils.filterOptions(item.additional_potential_option_3),
-	// 	};
-	// });
-
 	return (
 		<>
 			{isEquipmentFetched && (
@@ -130,8 +107,5 @@ export function Equipment(props: { characterName: string }) {
 				</Wrapper>
 			)}
 		</>
-		// <Wrapper>
-		// 	<EquipmentBoard equipmentList={equipmentList}></EquipmentBoard>
-		// </Wrapper>
 	);
 }

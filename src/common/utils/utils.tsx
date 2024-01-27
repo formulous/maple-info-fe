@@ -86,8 +86,52 @@ class Utils {
 		if (option.includes("캐릭터 기준 9레벨 당")) {
 			return option.replace("캐릭터 기준 9레벨 당", "렙당");
 		}
+		if (option.includes("모든 스킬의 재사용 대기시간")) {
+			return option
+				.replace("모든 스킬의 재사용 대기시간 : -", "쿨감 ")
+				.replace(/\([^)]*\)/g, "");
+		}
 
 		return option;
+	}
+
+	static optionFormatting(
+		optionTitle: string,
+		itemTotalOption: string,
+		itemBaseOption: string,
+		itemAddOption: string,
+		itemEtcOption: string,
+		itemStarforceOption: string
+	) {
+		return (
+			<div style={{ fontSize: "12px" }}>
+				<span>{optionTitle + " : "}</span>
+				<span>{itemTotalOption}</span>
+				{itemTotalOption !== itemBaseOption && `(${itemBaseOption}`}
+				{itemAddOption !== "0" && (
+					<span
+						style={{
+							color: "#5CB85C",
+							marginLeft: "4px",
+						}}>{`+ ${itemAddOption}`}</span>
+				)}
+				{itemEtcOption !== "0" && (
+					<span
+						style={{
+							color: "#6454BD",
+							marginLeft: "4px",
+						}}>{`+ ${itemEtcOption}`}</span>
+				)}
+				{itemStarforceOption !== "0" && (
+					<span
+						style={{
+							color: "#E09500",
+							marginLeft: "4px",
+						}}>{`+ ${itemStarforceOption}`}</span>
+				)}
+				{itemTotalOption !== itemBaseOption && ")"}
+			</div>
+		);
 	}
 }
 
